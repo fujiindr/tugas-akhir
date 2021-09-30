@@ -9,10 +9,11 @@
     <style>
 #saya{
     float : center;
-    width : 100%;
-    padding : 2PX;
+    width : 98%;
+    padding : 1PX;
     background :#ba8d87;
     color : black;
+    padding-left : 2%;
 }
 .aku {
     background-color: #caaa93;
@@ -29,15 +30,14 @@
     transition-duration: 0.4s;
     cursor: pointer;
   }
+  
 .d {
     float : left;
-    float : right;
     width : 98%;
     height : 500px;
     background : #cda09b ;
     color : black;
     padding-left : 2%;
-    padding-right : 2%;
 }
 A:link {
     color : black;
@@ -50,8 +50,7 @@ a:active{
 a:visited{
     color:black;
 }
-
-    </style>
+</style>
 </head>
 <body>
 <div id = "saya">
@@ -62,6 +61,7 @@ a:visited{
         <a href="create.php">Tambah Data Laundry</a>
         <a href="buat.php">Tambah Data Karyawan</a>
         <a href="tabel.php">Data Karyawan</a>
+        <a href="login.php"> Keluar</a>
         </div>
         <div class = "d">
         <fieldset>

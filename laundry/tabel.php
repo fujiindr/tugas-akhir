@@ -31,17 +31,6 @@
     cursor: pointer;
   }
   
-  .uas1 {
-    background-color: black; 
-    color: black; 
-    border: 2px solid black;
-  }
-  
-  .uas1:hover {
-    background-color: black;
-    color: black;
-  }
-  
 .d {
     float : left;
     width : 98%;
@@ -64,6 +53,9 @@ a:visited{
     table{
         background-color : #ebcfc4;
     }
+    button{
+        background-color : #ebcfc4;
+    }
 </style>
     </style>
 </head>
@@ -77,6 +69,7 @@ a:visited{
         <a href="create.php">Tambah Data Laundry</a>
         <a href="buat.php">Tambah Data Karyawan</a>
         <a href="tabel.php">Data Karyawan</a>
+        <a href="login.php"> Keluar</a>
         </div>
         <div class = "d">
         <fieldset>
