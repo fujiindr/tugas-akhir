@@ -81,7 +81,7 @@ a:visited{
                 <th>Nama Pelanggan</th>
                 <th>Jenis Paket</th>
                 <th>Berat</th>
-                <th colspan="4">Aksi</th>
+                <th colspan="2">Aksi</th>
             </tr>
              <?php
 include '../database.php';
@@ -98,6 +98,9 @@ foreach ($laundry->index() as $data) {
                     <td><?php echo $data['nama']; ?></td>
                     <td><?php echo $data['paket']; ?></td>
                     <td><?php echo $data['berat']; ?> Kg</td>
+                    <td>
+                        <a href = "edit.php?id=<?php echo $data['id']; ?>">Edit</a>
+                    </td>
                     <td>
                         <form action="proses.php" method="post">
                             <input type="hidden" name="id" value="<?php echo $data['id']; ?>">

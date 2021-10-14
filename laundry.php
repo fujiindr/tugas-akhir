@@ -6,7 +6,8 @@ class laundry extends Database
     {
 
         $datalaundry = mysqli_query($this->koneksi, 
-        "select * from laundry");
+        "select laundry.id_karyawan, laundry.kode_pesanan, laundry.tanggal, laundry.kembali, laundry.nama, laundry.paket, laundry.berat, 
+        karyawan.id_kar, karyawan.nama, from laundry join karyawan on karyawan.id_kar = laundry.id_karyawan");
         // var_dump($datalaundry);
         return $datalaundry;
     }

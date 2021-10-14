@@ -80,7 +80,7 @@ a:visited{
                 <th>No</th>
                 <th>ID Karyawan</th>
                 <th>Nama Karyawan</th>
-                <th>Aksi</th>
+                <th colspan = "2">Aksi</th>
             </tr>
              <?php
 include '../database.php';
@@ -92,6 +92,9 @@ foreach ($karyawan->index() as $data) {
                     <td><?php echo $no++; ?></td>
                     <td><?php echo $data['id_kar']; ?></td>
                     <td><?php echo $data['nama']; ?></td>
+                    <td>
+                        <a href = "edit_karyawan.php?id=<?php echo $data['id_kar']; ?>">Edit</a>
+                    </td>
                     <td>
                         <form action="proses_karyawan.php" method="post">
                             <input type="hidden" name="id_kar" value="<?php echo $data['id_kar']; ?>">

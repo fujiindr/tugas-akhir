@@ -35,17 +35,17 @@ fieldset{
 <body>
 <?php
         if ($_SERVER['REQUEST_METHOD']=='POST') {
-            $user = $_POST['username'];
+            $username = $_POST['username'];
             $password = $_POST['pass'];
             $pass = md5($password);
 
-            if ($user == '' && $password == '') {
+            if ($username == '' && $password == '12345') {
                 ?>
                 <div class = "save"><b>Warning!</b> Form Tidak Lengkap!</div>
                 <?php
             }else {
                 include "koneksi.php";
-                $login = mysqli_query($connect, "SELECT * FROM login WHERE username = '$user' AND password = '$pass' ");
+                $login = mysqli_query($connect, "SELECT * FROM login WHERE username = '$username' AND password = '$pass' ");
                 $jumlah = mysqli_num_rows($login);
                 $hasil = mysqli_fetch_array($login);
 
@@ -53,7 +53,7 @@ fieldset{
                     session_start();
                     $_SESSION ['save'] = TRUE;
                     $_SESSION ['username'] = $hasil['username'];
-                    $_SESSION ['password_admin'] = $hasil['password_admin'];
+                    $_SESSION ['password'] = $hasil['password'];
 
                     header('Location:data.php');
                 }else{

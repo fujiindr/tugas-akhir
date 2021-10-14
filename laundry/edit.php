@@ -35,7 +35,7 @@ foreach ($laundry->edit($_GET['id']) as $data) {
                 </tr>
                <tr>
                     <td>Kode Pesanan</td>
-                    <td><input type="text" name="kode" value="<?php echo $kode_pesanan; ?>" required></td>
+                    <td><input type="text" name="kode_pesanan" value="<?php echo $kode_pesanan; ?>" required></td>
                 </tr>
                 <tr>
                     <td>Tanggal Pesanan</td>
