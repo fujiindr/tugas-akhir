@@ -5,9 +5,11 @@ class laundry extends Database
     public function index()
     {
 
-        $datalaundry = mysqli_query($this->koneksi, 
-        "select laundry.id_karyawan, laundry.kode_pesanan, laundry.tanggal, laundry.kembali, laundry.nama, laundry.paket, laundry.berat, 
-        karyawan.id_kar, karyawan.nama, from laundry join karyawan on karyawan.id_kar = laundry.id_karyawan");
+        $datalaundry = mysqli_query(
+        $this->koneksi, 
+        "laundry.*, karyawan.nama
+        FROM laundry JOIN karyawan
+        ON laundry.id_karyawan = karyawan.id_kar ORDER BY laundry.id DESC");
         // var_dump($datalaundry);
         return $datalaundry;
     }
@@ -21,16 +23,6 @@ class laundry extends Database
         );
     }
     // Menampilkan Data Berdasarkan ID
-    public function show($id)
-    {
-        $datalaundry = mysqli_query(
-            $this->koneksi,
-            "select * from laundry
-            where laundry.id='$id'"
-        );
-        return $datalaundry;
-    }
-
     // Menampilkan data berdasarkan id
     public function edit($id)
     {

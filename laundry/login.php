@@ -39,13 +39,13 @@ fieldset{
             $password = $_POST['pass'];
             $pass = md5($password);
 
-            if ($username == '' && $password == '12345') {
+            if ($username == '' && $password == '') {
                 ?>
                 <div class = "save"><b>Warning!</b> Form Tidak Lengkap!</div>
                 <?php
             }else {
                 include "koneksi.php";
-                $login = mysqli_query($connect, "SELECT * FROM login WHERE username = '$username' AND password = '$pass' ");
+                $login = mysqli_query($connect, "SELECT * FROM login WHERE username = '$username' AND pass = '$pass' ");
                 $jumlah = mysqli_num_rows($login);
                 $hasil = mysqli_fetch_array($login);
 
@@ -53,7 +53,7 @@ fieldset{
                     session_start();
                     $_SESSION ['save'] = TRUE;
                     $_SESSION ['username'] = $hasil['username'];
-                    $_SESSION ['password'] = $hasil['password'];
+                    $_SESSION ['pass'] = $hasil['pass'];
 
                     header('Location:data.php');
                 }else{
